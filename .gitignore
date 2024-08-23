@@ -18,6 +18,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/routes/auth.php
-/resources/views/site/auth
-/resources/views/site/auth
+routes/auth.php
+resources/views/site/auth
