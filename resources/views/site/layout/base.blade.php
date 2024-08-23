@@ -6,10 +6,8 @@
     @yield('head')
 
 </head>
-<body>
-@if(!str_contains(request()->route()->getName(),'auth'))
+<body class=" has-topbar">
     @include("site.layout.partials.header")
-@endif
 @yield('content')
 @if(!str_contains(request()->route()->getName(),'auth'))
     @include("site.layout.partials.footer")
