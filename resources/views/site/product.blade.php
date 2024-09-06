@@ -6,7 +6,7 @@
    <link rel="stylesheet" href="{{asset('site/assets/css/pages/page-02.css')}}">
 @endsection
 @section('content')
-<div class="page-products">  
+<div class="page-products">
    <div class="container-fluid container-bread-crumb" @if(@$product_cat->pic_banner) style="background-image: url({{asset("upload/thumb1/".$product_cat->pic_banner)}}" @endif>
        <div class="container-custom">
            <div class="row">
@@ -89,7 +89,7 @@
    {{$product->links('site.layout.paginate.paginate')}}
    <!--/ pagination -->
 
- 
+
 
    @if(@$product_cat->note)
    <!-- product-list-des -->

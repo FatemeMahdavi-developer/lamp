@@ -6,7 +6,7 @@
     @yield('head')
 
 </head>
-<body class=" has-topbar">
+<body class=" has-topbar" dir="rtl" >
     @include("site.layout.partials.header")
 @yield('content')
 @if(!str_contains(request()->route()->getName(),'auth'))

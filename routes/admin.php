@@ -23,6 +23,8 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\pagesController;
 use App\Http\Controllers\admin\photo_cat_controller;
 use App\Http\Controllers\admin\photo_controller;
+use App\Http\Controllers\admin\project_cat_controller;
+use App\Http\Controllers\admin\project_controller;
 use App\Http\Controllers\admin\submenu_controller;
 use App\Http\Controllers\admin\video_cat_controller;
 use App\Http\Controllers\admin\video_controller;
@@ -93,7 +95,7 @@ Route::middleware("auth:admin")->group(function () {
     Route::resource("contact/message",message_controller::class)->except("show",'create','store');
     Route::post("contact/message/action_all",[message_controller::class,"action_all"])->name("message.action_all");
 
-    
+
     Route::resource("photo_cat",photo_cat_controller::class)->except("show");
     Route::post("photo_cat/action_all", [photo_cat_controller::class, "action_all"])->name("photo_cat.action_all");
     Route::resource("photo",photo_controller::class)->except("show");
@@ -112,5 +114,12 @@ Route::middleware("auth:admin")->group(function () {
     Route::get('employment/excel',[employment_controller::class,'excel'])->name('employment.excel');
     Route::get('/employment/{id:id}/print', [employment_controller::class,'print'])->name('employment.print');
     // employment ***
+
+
+    Route::resource("project_cat",project_cat_controller::class)->except("show");
+    Route::post("project_cat/action_all",[project_cat_controller::class,"action_all"])->name("project_cat.action_all");
+
+    Route::resource("project",project_controller::class)->except("show");
+    Route::post("project/action_all",[project_controller::class,"action_all"])->name("project.action_all");
 
 });

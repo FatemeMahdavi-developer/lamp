@@ -21,7 +21,8 @@ class settingController extends Controller
     public function setting(){
         return view("admin.module.setting.setting",[
             'module' => $this->module,
-            'module_title' => $this->module_title
+            'module_title' => $this->module_title,
+            'arr_project'=>__('common.main_project')
         ]);
     }
 

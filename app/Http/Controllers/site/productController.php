@@ -14,7 +14,7 @@ use PhpOffice\PhpSpreadsheet\Calculation\Financial\Securities\Rates;
 
 class productController extends Controller
 {
-   use seo_site;
+//    use seo_site;
    public function __construct(private string $module='',private string $module_title='')
    {
        $this->module="product";
@@ -50,9 +50,11 @@ class productController extends Controller
            ->withQueryString();
        }
 
-       $seo=$this->seo_site($this->module,$product_cat);
+    //    $seo=$this->seo_site($this->module,$product_cat);
 
-       return view('site.product', compact('product_cat','product','product_cats','breadcrumb','module_title','seo','module'));
+    return view('site.product', compact('product_cat','product','product_cats','breadcrumb','module_title','module'));
+
+    //    return view('site.product', compact('product_cat','product','product_cats','breadcrumb','module_title','seo','module'));
    }
 
    public function show(Request $request, product $product){
@@ -73,9 +75,9 @@ class productController extends Controller
                ->get(['title','pic','kind','catalog']);
 
            $content_pics=$content->where('kind',3);
-           $content_catalog=$content->where('kind',4)->first(); 
-           
-           $seo=$this->seo_site($this->module,$product);
+           $content_catalog=$content->where('kind',4)->first();
+
+        //    $seo=$this->seo_site($this->module,$product);
 
             return view('site.product_info',
                 compact('product',
@@ -83,7 +85,7 @@ class productController extends Controller
                     'content_pics',
                     'content_catalog',
                     'breadcrumb',
-                    'seo',
+                    // 'seo',
                     'module',
                     'module_title'
                 )
