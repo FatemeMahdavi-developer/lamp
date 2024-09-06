@@ -45,7 +45,17 @@
                                                 @component($prefix_component."input",['name'=>'email_contact','title'=>'ایمیل','value'=>app('setting')['email_contact'] ?? "",'class'=>'w-50'])@endcomponent
                                                 @component($prefix_component."textarea_variable",['name'=>'address_contact','title'=>'آدرس','value'=>app('setting')['address_contact'] ?? ""])@endcomponent
                                             @endslot
-                                        @endcomponent
+                                            @endcomponent
+                                            @component($prefix_component."card",["title"=>"آیتم های صفحه اصلی و صفحه داخلی پروژه ها"])
+                                            @slot("card_content")
+                                                @foreach ($arr_project as $item_key=>$item_val)
+                                                    <div><u>{{$item_val}}</u></div>
+                                                    @component($prefix_component."input",['name'=>'project_'.$item_key.'_count','title'=>'تعداد','value'=>app('setting')['project_'.$item_key.'_count'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'project_'.$item_key.'_title','title'=>'عنوان','value'=>app('setting')['project_'.$item_key.'_title'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'project_'.$item_key.'_note','title'=>'متن','value'=>app('setting')['project_'.$item_key.'_note'] ?? "",'class'=>'w-50'])@endcomponent
+                                                @endforeach
+                                            @endslot
+                                            @endcomponent
                                             @component($prefix_component."button",['title'=>'ارسال'])@endcomponent
                                         @endslot
                                     @endcomponent
@@ -67,7 +77,7 @@
                                                 @component($prefix_component."card",["title"=>$module_value])
                                                     @slot("card_content")
                                                         @component($prefix_component."input",['name'=>$module_key.'_title','title'=>"عنوان",'value'=>app('setting')[$module_key.'_title'] ?? "",'class'=>'w-50'])@endcomponent
-                                                        @component($prefix_component."upload_file",['name'=>$module_key.'_pic','title'=>'تصویر ','value'=>app('setting')[$module_key.'_pic'] ?? "",'class'=>'w-50'])@endcomponent 
+                                                        @component($prefix_component."upload_file",['name'=>$module_key.'_pic','title'=>'تصویر ','value'=>app('setting')[$module_key.'_pic'] ?? "",'class'=>'w-50'])@endcomponent
                                                         @component($prefix_component."upload_file",['name'=>$module_key.'_pic_mobile','title'=>'تصویر موبایل (310x300)','value'=>app('setting')[$module_key.'_pic_mobile'] ?? "",'class'=>'w-50'])@endcomponent
                                                         {{-- @component($prefix_component."upload_file",['name'=>$module_key.'_video','title'=>'ویدیو','value'=>app('setting')[$module_key.'_video'] ?? "",'class'=>'w-50'])@endcomponent --}}
                                                         {{-- @component($prefix_component."upload_file",['name'=>$module_key.'_video_mobile','title'=>'ویدیو موبایل','value'=>app('setting')[$module_key.'_video_mobile'] ?? "",'class'=>'w-50'])@endcomponent --}}

@@ -1,8 +1,8 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand" style="height:40px">
-            {{-- <a href="javascript:void(0)"> 
-                <img alt="تصویر" src="{{asset("admin/assets/img/logo.png")}}" class="header-logo"> 
+            {{-- <a href="javascript:void(0)">
+                <img alt="تصویر" src="{{asset("admin/assets/img/logo.png")}}" class="header-logo">
                 <span class="logo-name">اجیس</span>
             </a> --}}
         </div>
@@ -65,7 +65,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i><span>محل شما روی نقشه</span></a>
                 <ul class="dropdown-menu @if(str_contains(request()->route()->getName(),'contactmap')) d-block @endif">
                     @can("update_contactmap")
-                    <li><a class="nav-link" href="{{route("admin.contactmap.edit")}}">لوکیشن</a></li> 
+                    <li><a class="nav-link" href="{{route("admin.contactmap.edit")}}">لوکیشن</a></li>
                     @endcan
                 </ul>
             </li>
@@ -206,6 +206,32 @@
                     @endcan
                     @can("read_product")
                     <li><a class="nav-link" href="{{route("admin.product.index")}}">لیست محصولات</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcanany
+            @canany(permission_access("project_cat"))
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-layer-group"></i><span>دسته بندی پروژه</span></a>
+                <ul class="dropdown-menu @if(str_contains(request()->route()->getName(),'project_cat')) d-block @endif">
+                    @can("create_project_cat")
+                    <li><a class="nav-link" href="{{route("admin.project_cat.create")}}">دسته بندی جدید</a></li>
+                    @endcan
+                    @can("read_project_cat")
+                    <li><a class="nav-link" href="{{route("admin.project_cat.index")}}">لیست دسته بندی</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcanany
+            @canany(permission_access("project"))
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-layer-group"></i><span>پروژه ها</span></a>
+                <ul class="dropdown-menu @if(str_contains(request()->route()->getName(),'project')) d-block @endif">
+                    @can("create_project")
+                    <li><a class="nav-link" href="{{route("admin.project.create")}}">پروژه جدید</a></li>
+                    @endcan
+                    @can("read_project")
+                    <li><a class="nav-link" href="{{route("admin.project.index")}}">لیست پروژه ها</a></li>
                     @endcan
                 </ul>
             </li>

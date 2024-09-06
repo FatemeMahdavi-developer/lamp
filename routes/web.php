@@ -9,6 +9,7 @@ use App\Http\Controllers\site\MultimediaController;
 use App\Http\Controllers\site\newsController;
 use App\Http\Controllers\site\PhotoController;
 use App\Http\Controllers\site\productController;
+use App\Http\Controllers\site\projectController;
 use App\Http\Controllers\site\searchController;
 use App\Http\Controllers\site\VideoController;
 use Illuminate\Support\Facades\App;
@@ -29,9 +30,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 // Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
-    
+
     require __DIR__ . '/auth.php';
-    
+
     Route::any('search',searchController::class)->name('search');
 
     Route::get('', [\App\Http\Controllers\site\HomeController::class, 'main'])->name('main');
@@ -85,7 +86,16 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
     Route::get('/employment', [EmploymentController::class,'show'])->name('employment.show');
     Route::post('/employment', [EmploymentController::class,'store'])->name('employment.store');
 
+
+    Route::prefix('/project')->as('project.')->group(function () {
+        Route::get('/', [projectController::class,'index'])->name('index');
+        Route::get('/cat/{project_cat:seo_url}',[projectController::class,'index'])->name('index_cat');
+        Route::get('/{project:seo_url}',[projectController::class,'show'])->name('show');
+        Route::post('/project_send_email/{id}',[projectController::class,'mail'])->name('mail');
+        Route::get('/{project:seo_url}/print',[projectController::class,'show'])->name('print');
+    });
+    
     // Route::get('/sitemap.xml');
 
-    
+
 // });

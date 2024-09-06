@@ -34,7 +34,7 @@
                                     @component($prefix_component."upload_file",['name'=>'catalog','value'=>$content["catalog"],'title'=>'کاتالوگ','class'=>'w-50 kind_item kind_4','module'=>false])@endcomponent
                                     @endif
                                     @if($content["kind"]==5)
-                                    @component($prefix_component."upload_file",['name'=>'pic_video','value'=>$content["pic_video"],'title'=>'کاور ویدیو','class'=>'w-50 kind_item kind_5 video','module'=>false])@endcomponent
+                                    @component($prefix_component."upload_file",['name'=>'pic_video','value'=>$content["pic_video"],'title'=>'کاور ویدیو','class'=>'w-50 kind_item kind_5 video','module'=>$module."_".$module_type])@endcomponent
                                     @component($prefix_component."upload_file",['name'=>'video','value'=>$content["video"],'title'=>'ویدیو','class'=>'w-50 kind_item kind_5 video','module'=>false])@endcomponent
                                     @component($prefix_component."checkbox",['name'=>'is_aparat','value'=>$content["is_aparat"],'title'=>'کد امبد آپارات','class'=>'kind_item kind_5 my-3 '])@endcomponent
                                     @endif
