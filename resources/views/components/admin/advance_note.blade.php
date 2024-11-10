@@ -5,3 +5,17 @@
     @error($name)<span class="text text-danger">{{$errors->first($name)}}</span>@enderror
 
 </div>
+
+
+<script>
+    ClassicEditor.create(document.querySelector("#{{$name}}"), {
+        language: {
+            ui: 'fa',
+            content: 'fa'
+        },
+        toolbar: ['heading','bold','italic','link','bulletedList','numberedList','blockQuote','codeBlock'],
+    })
+    .then(editor => {
+        editorInstance = editor;
+    })
+</script>
