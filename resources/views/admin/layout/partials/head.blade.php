@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="{{asset("admin/assets/css/components.css")}}">
 <link rel="stylesheet" href="{{asset("admin/assets/css/tagsinput.css")}}">
 <link rel="stylesheet" href="{{asset("admin/assets/boundles/pretty-checkbox/pretty-checkbox.min.css")}}">
-<link rel="stylesheet" href="{{asset("admin/assets/boundles/summernote/summernote-bs4.css")}}">
+{{-- <link rel="stylesheet" href="{{asset("admin/assets/boundles/summernote/summernote-bs4.css")}}"> --}}
 <link rel="stylesheet" href="{{asset("admin/assets/boundles/select2/dist/css/select2.min.css")}}">
 <!-- Custom style CSS -->
 <link rel="stylesheet" href="{{asset("admin/assets/css/custom.css")}}">
 <link rel='shortcut icon' type='image/x-icon' href='{{asset("admin/assets/img/favicon.ico")}}'/>
 <script src="{{asset("admin/assets/js/app.min.js")}}"></script>
+<script src="{{asset("admin/assets/js/ckeditor5.js")}}"></script>
