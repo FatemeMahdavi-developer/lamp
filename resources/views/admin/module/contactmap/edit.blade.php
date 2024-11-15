@@ -17,10 +17,10 @@
                             @slot("content")
                             @method('put')
                                 <div id="map" style="height:500px"></div>
-                                @component($prefix_component."input",['name'=>'lgmap','title'=>'طول جغرافیایی','value'=>$contactmap['lgmap'],'class'=>'w-50 lgmap'])@endcomponent
-                                @component($prefix_component."input",['name'=>'qgmap','title'=>'عرض جغرافیایی','value'=>$contactmap['qgmap'],'class'=>'w-50 qgmap'])@endcomponent
-                                @component($prefix_component."input",['name'=>'zgmap','title'=>'بزرگ نمایی','value'=>$contactmap['zgmap'],'class'=>'w-50'])@endcomponent
-                                @component($prefix_component."advance_note",['name'=>'cgmap','class'=>'my-2 ','title'=>'توضیحات','value'=>$contactmap['cgmap']])@endcomponent
+                                @component($prefix_component."input",['name'=>'lgmap','title'=>'طول جغرافیایی','value'=>$contactmap['lgmap'] ?? '','class'=>'w-50 lgmap'])@endcomponent
+                                @component($prefix_component."input",['name'=>'qgmap','title'=>'عرض جغرافیایی','value'=>$contactmap['qgmap'] ?? '','class'=>'w-50 qgmap'])@endcomponent
+                                @component($prefix_component."input",['name'=>'zgmap','title'=>'بزرگ نمایی','value'=>$contactmap['zgmap'] ?? '','class'=>'w-50'])@endcomponent
+                                @component($prefix_component."advance_note",['name'=>'cgmap','class'=>'my-2 ','title'=>'توضیحات','value'=>$contactmap['cgmap'] ?? ''])@endcomponent
                                 @component($prefix_component."button",['title'=>'ارسال'])@endcomponent
                                 @endslot
                             @endcomponent

@@ -43,6 +43,7 @@
                                             @slot("card_content")
                                                 @component($prefix_component."input",['name'=>'tell_contact','title'=>'تلفن','value'=>app('setting')['tell_contact'] ?? "",'class'=>'w-50'])@endcomponent
                                                 @component($prefix_component."input",['name'=>'email_contact','title'=>'ایمیل','value'=>app('setting')['email_contact'] ?? "",'class'=>'w-50'])@endcomponent
+                                                @component($prefix_component."input",['name'=>'working_time_contact','title'=>'ساعت کاری','value'=>app('setting')['working_time_contact'] ?? "",'class'=>'w-50'])@endcomponent
                                                 @component($prefix_component."textarea_variable",['name'=>'address_contact','title'=>'آدرس','value'=>app('setting')['address_contact'] ?? ""])@endcomponent
                                             @endslot
                                             @endcomponent
@@ -134,7 +135,7 @@
                                         @slot("content")
                                             @component($prefix_component."input",['name'=>"address_email",'title'=>"آدرس ایمیل smtp",'value'=>app('setting')["address_email"] ?? "",'class'=>'w-50'])@endcomponent
                                             @component($prefix_component."input",['name'=>"address_user_name_email",'title'=>"شناسه کاربری",'value'=>app('setting')["address_user_name_email"] ?? "",'class'=>'w-50'])@endcomponent
-                                            @component($prefix_component."input",['name'=>"address_password_email",'title'=>"رمز عبور",'value'=>app('setting')["address_password_email"] ?? "",'class'=>'w-50'])@endcomponent
+                                            @component($prefix_component."input",['type'=>"password",'name'=>"address_password_email",'title'=>"رمز عبور",'value'=>app('setting')["address_password_email"] ?? "",'class'=>'w-50'])@endcomponent
                                             @component($prefix_component."card",["title"=>"ایمیل تغییر رمز عبور"])
                                                 @slot("card_content")
                                                     @component($prefix_component."input",['name'=>"title_change_password_email",'title'=>"عنوان",'value'=>app('setting')["title_change_password_email"] ?? "",'class'=>'w-50'])@endcomponent

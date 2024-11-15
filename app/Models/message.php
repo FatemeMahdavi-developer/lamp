@@ -16,9 +16,11 @@ class message extends Model
         'mobile',
         'catid',
         'note',
+        'answer_title',
+        'answer_note',
         'ip_address'
     ];
-    
+
     public function message_cat()
     {
         return $this->belongsTo(message_cat::class, 'catid')->select("id", "title");

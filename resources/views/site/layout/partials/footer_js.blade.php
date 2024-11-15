@@ -17,3 +17,5 @@
     <script src="{{asset('site/assets/js/controllers/stretch-column.js')}}"></script>
     <script src="{{asset('site/assets/js/controllers/swiper.js')}}"></script>
     <script src="{{asset('site/assets/js/controllers/others.js')}}"></script><!-- endbuild -->
+    <link rel="stylesheet" href="{{asset("site/assets/leaflet/leaflet.css")}}" />
+    <script src="{{asset("site/assets/leaflet/leaflet.js")}}"></script>
