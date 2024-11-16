@@ -16,22 +16,24 @@ use Illuminate\Support\Facades\Validator;
 class newsController extends Controller
 {
     use seo_site;
-    public function __construct(private string $module='',private string $module_title='')
+    public function __construct(private string $module='',private string $module_title='',public string $module_pic='')
     {
         $this->module="news";
-        $this->module_title=trans("modules.module_name_site.".$this->module);
+        $this->module_title=app('setting')[$this->module."_title"];
+        $this->module_pic=app("setting")[$this->module."_pic"] ?? '';
     }
 
     public function index(news_cat $news_cat = null)
     {
         $module=$this->module;
         $module_title=$this->module_title;
+        $module_pic=$this->module_pic;
         $breadcrumb=[];
 
         $news_cats=news_cat::where('state', '1')
             ->orderByRaw("`order` ASC, `id` DESC")
             ->get(['id', 'title', 'seo_url']);
-            
+
         $hit_news = news::where('state','1')
             ->where('validity_date', '<=', Carbon::now()
             ->format('Y/m/d H:i:s'))
@@ -60,7 +62,7 @@ class newsController extends Controller
             $breadcrumb=$news_cat->parents()->where('state','1');
         }
         $seo=$this->seo_site($this->module,$news_cat);
-        return view('site.news', compact('news_cat', 'news', 'news_cats', 'hit_news','seo','breadcrumb','module_title','module'));
+        return view('site.news', compact('news_cat', 'news', 'news_cats', 'hit_news','seo','breadcrumb','module_title','module','module_pic'));
     }
 
     public function show(Request $request, news $news)
@@ -75,7 +77,10 @@ class newsController extends Controller
                 return view('site.print.news_info', compact('news'));
             }
             $seo=$this->seo_site($this->module,$news);
-            return view('site.news_info', compact('news', 'comment','seo'));
+            $news_pic=$news->content_site()->where('kind','2');
+            $news_note=$news->content_site()->where('kind','1');
+            $news_video=$news->content_site()->where('kind','5');
+            return view('site.news_info', compact('news', 'comment','seo','news_pic','news_note','news_video'));
         }
     }
 

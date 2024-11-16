@@ -26,7 +26,7 @@ class pageServiceProvider extends ServiceProvider
     {
         page::where("state", "1")->each(function ($page) {
             View::composer(["site.*"], function ($view) use ($page) {
-                $filleds = ["title", "pic", "alt_pic", "note"];
+                $filleds = ["title", "pic", "alt_pic", "note","short_note"];
                 foreach ($filleds as $filled) {
                     $view->with(["pages_" . $page["seo_url"] . "_".$filled => $page[$filled]]);
                 }

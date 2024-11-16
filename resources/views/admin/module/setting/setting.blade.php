@@ -32,11 +32,27 @@
                                     @component($prefix_component."form",["action"=>route('admin.setting.store')])
                                         @slot("content")
                                             @component($prefix_component."input",['name'=>'google_analytics_code','title'=>'کد گوگل آنالیتیکس','value'=>app('setting')['google_analytics_code'] ?? "",'class'=>'w-50'])@endcomponent
+                                            @component($prefix_component."card",["title"=>"آیتم های هدر سایت"])
+                                                @slot("card_content")
+                                                    @component($prefix_component."input",['name'=>'tell_header','title'=>'تلفن','value'=>app('setting')['tell_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'email_header','title'=>'ایمیل','value'=>app('setting')['email_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'twitter_header','title'=>'توییتر','value'=>app('setting')['twitter_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'instagram_header','title'=>'اینستاگرام','value'=>app('setting')['instagram_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'facebook_header','title'=>'فیسبوک','value'=>app('setting')['facebook_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'youtube_header','title'=>'یوتوب','value'=>app('setting')['youtube_header'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."textarea_variable",['name'=>'address_header','title'=>'آدرس','value'=>app('setting')['address_header'] ?? ""])@endcomponent
+                                                @endslot
+                                            @endcomponent
                                             @component($prefix_component."card",["title"=>"آیتم های فوتر سایت"])
                                                 @slot("card_content")
                                                     @component($prefix_component."input",['name'=>'tell_footer','title'=>'تلفن','value'=>app('setting')['tell_footer'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'tell_footer_2','title'=>'تلفن دوم','value'=>app('setting')['tell_footer_2'] ?? "",'class'=>'w-50'])@endcomponent
                                                     @component($prefix_component."input",['name'=>'email_footer','title'=>'ایمیل','value'=>app('setting')['email_footer'] ?? "",'class'=>'w-50'])@endcomponent
-                                                    @component($prefix_component."textarea_variable",['name'=>'address_footer','title'=>'آدرس','value'=>app('setting')['address_footer'] ?? ""])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'twitter_footer','title'=>'توییتر','value'=>app('setting')['twitter_footer'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'instagram_footer','title'=>'اینستاگرام','value'=>app('setting')['instagram_footer'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'facebook_footer','title'=>'فیسبوک','value'=>app('setting')['facebook_footer'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."input",['name'=>'youtube_footer','title'=>'یوتوب','value'=>app('setting')['youtube_footer'] ?? "",'class'=>'w-50'])@endcomponent
+                                                    @component($prefix_component."textarea_variable",['name'=>'address_footer','title'=>'متن','value'=>app('setting')['address_footer'] ?? ""])@endcomponent
                                                 @endslot
                                             @endcomponent
                                             @component($prefix_component."card",["title"=>"آیتم های تماس با ما"])

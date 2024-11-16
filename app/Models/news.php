@@ -20,7 +20,14 @@ class news extends Model
 {
     use HasFactory, SoftDeletes, date_convert, morph_content,seo,Comment,Rate,Breadcrumb;
 
-    protected $appends = ['validate_date_admin', 'short_note', 'alt_image','url'];
+    protected $appends = [
+        'validate_date_admin',
+        'short_note',
+        'alt_image',
+        'url',
+        'date_site',
+        'news_keyword',
+        'related_news'];
     protected $fillable = [
         'seo_title',
         'seo_url',
@@ -106,7 +113,21 @@ class news extends Model
     public function prevNews(){
         return news::where('id','<',$this->id)->where('state', '1')->where('validity_date', '<=', Carbon::now()->format('Y/m/d H:i:s'))->select(['seo_url'])->first();
     }
+    public function getDateSiteAttribute(): string
+    {
+        return Jalalian::forge($this->created_at)->format('%d %B، %Y');
+    }
 
+    public function getNewsKeywordAttribute(){
+        return explode(',',$this->seo_keyword);
+    }
 
+    public function getRelatedNewsAttribute(){
+        return news::where('catid',$this->catid)
+            ->where('id','!=',$this->id)
+            ->where('state','1')
+            ->orderByRaw("`order` ASC, `id` DESC")
+            ->get();
+    }
 
 }

@@ -20,8 +20,6 @@
                                     @component($prefix_component."input",['name'=>'url','title'=>'آدرس صفحه','value'=>old('url'),'class'=>'w-50 url','dir'=>'ltr'])@endcomponent
                                     @component($prefix_component."select",['name'=>'pages','title'=>'آدرس صفحه','class'=>'w-50 pages','items'=>$pages_url,'value_old'=>old('pages')])@endcomponent
                                     @component($prefix_component."select",['name'=>'type','title'=>'نوع','class'=>'w-50 typetype','items'=>$menu_kind,'value_old'=>old('type')])@endcomponent
-                                    @component($prefix_component."upload_file",['name'=>'pic','title'=>'تصویر','class'=>'w-50 type type-1','module'=>$module])@endcomponent
-                                    @component($prefix_component."input",['name'=>'alt_pic','title'=>'alt تصویر','value'=>old('alt_pic'),'class'=>'w-50 type type-1'])@endcomponent
                                     @component($prefix_component."select",['name'=>'open_type','title'=>'نوع باز شدن','class'=>'w-50','items'=>$open_type,'value_old'=>old('open_type')])@endcomponent
                                     @component($prefix_component."button",['title'=>'ارسال'])@endcomponent
                                 @endslot
