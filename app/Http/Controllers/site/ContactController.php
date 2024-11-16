@@ -7,9 +7,11 @@ use App\Http\Requests\site\ContacRequest;
 use App\Models\contactmap;
 use App\Models\message;
 use App\Models\message_cat;
+use App\Trait\seo_site;
 
 class ContactController extends Controller
 {
+    use seo_site;
     public function __construct(public string $module='',public string $module_title='',public string $module_pic=''){
         $this->module='contact';
         $this->module_title=app("setting")[$this->module."_title"] ?? __("modules.module_name_site.".$this->module);
@@ -17,6 +19,7 @@ class ContactController extends Controller
     }
     public function contact()
     {
+        $seo=$this->seo_site($this->module);
         $contactmap= contactmap::find('1')->get(['lgmap','qgmap','zgmap','cgmap'])->Toarray();
 
         $contact_unit=message_cat::where("state",'1')->get(['id','title']);
@@ -33,7 +36,10 @@ class ContactController extends Controller
             'tell'=>app("setting")["tell_".$this->module] ?? '',
             'email'=>app("setting")["email_".$this->module] ?? '',
             'address'=>app("setting")["address_".$this->module] ?? '',
+            'working_time'=>app("setting")["working_time_".$this->module] ?? '',
             'message_cats'=>$message_cats,
+            'seo'=>$seo,
+            'module'=> $this->module,
         ]);
     }
 

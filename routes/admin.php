@@ -26,6 +26,7 @@ use App\Http\Controllers\admin\photo_controller;
 use App\Http\Controllers\admin\project_cat_controller;
 use App\Http\Controllers\admin\project_controller;
 use App\Http\Controllers\admin\submenu_controller;
+use App\Http\Controllers\admin\teamController;
 use App\Http\Controllers\admin\video_cat_controller;
 use App\Http\Controllers\admin\video_controller;
 use Illuminate\Support\Facades\Redirect;
@@ -60,6 +61,9 @@ Route::middleware("auth:admin")->group(function () {
     Route::resource("comment", comment_controller::class)->except("show","store","create");
     Route::resource("instagram", instagramController::class);
     Route::post("instagram/action_all", [instagramController::class, "action_all"])->name("instagram.action_all");
+
+    Route::resource("team", teamController::class);
+    Route::post("team/action_all", [teamController::class, "action_all"])->name("team.action_all");
 
     Route::resource("menu", menuController::class);
     Route::post("menu/action_all", [menuController::class, "action_all"])->name("menu.action_all");

@@ -37,7 +37,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
     Route::get('', [\App\Http\Controllers\site\HomeController::class, 'main'])->name('main');
 
-    Route::get('about', [\App\Http\Controllers\site\HomeController::class, 'about'])->name('about');
+    Route::get('about', [\App\Http\Controllers\site\AboutController::class, 'about'])->name('about');
 
     Route::prefix('/news')->as('news.')->group(function () {
         Route::get('/', [newsController::class, 'index'])->name('index');
@@ -94,7 +94,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         Route::post('/project_send_email/{id}',[projectController::class,'mail'])->name('mail');
         Route::get('/{project:seo_url}/print',[projectController::class,'show'])->name('print');
     });
-    
+
     // Route::get('/sitemap.xml');
 
 

@@ -13,13 +13,14 @@
                             <h4>{{$module_name}}</h4>
                         </div>
                         <div class="card-body">
-                            @component($prefix_component."form",['action'=>route('admin.instagram.store'),'upload_file'=>true])
+                            @component($prefix_component."form",['action'=>route('admin.team.store'),'upload_file'=>true])
                                 @slot("content")
                                     @component($prefix_component."input",['name'=>'title','title'=>'عنوان','value'=>old('title'),'class'=>'w-50'])@endcomponent
                                     @component($prefix_component."upload_file",['name'=>'pic','title'=>'تصویر','value'=>old('pic'),'class'=>'w-50','module'=>$module])@endcomponent
                                     @component($prefix_component."input",['name'=>'alt_pic','title'=>'alt تصویر','value'=>old('alt_pic'),'class'=>'w-50'])@endcomponent
-                                    @component($prefix_component."input",['name'=>'link','title'=>'لینک','value'=>old('link'),'class'=>'w-50'])@endcomponent
+                                    @component($prefix_component."input",['name'=>'position','title'=>'سمت','value'=>old('position'),'class'=>'w-50'])@endcomponent
                                     @component($prefix_component."button",['title'=>'ارسال'])@endcomponent
+
                                 @endslot
                             @endcomponent
                         </div>

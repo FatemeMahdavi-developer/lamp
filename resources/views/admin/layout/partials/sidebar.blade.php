@@ -184,6 +184,19 @@
                 </ul>
             </li>
             @endcanany
+            @canany(permission_access("team"))
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-comment-dots"></i><span>اعضای تیم</span></a>
+                <ul class="dropdown-menu @if(str_contains(request()->route()->getName(),'team')) d-block @endif">
+                    @can("create_team")
+                    <li><a class="nav-link" href="{{route("admin.team.create")}}">اعضای جدید</a></li>
+                    @endcan
+                    @can("read_team")
+                    <li><a class="nav-link" href="{{route("admin.team.index")}}">لیست اعضای تیم</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcanany
             @canany(permission_access("product_cat"))
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-layer-group"></i><span>دسته بندی محصولات</span></a>
