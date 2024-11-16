@@ -20,7 +20,6 @@
                                     @component($prefix_component."input",['name'=>'alt_pic','title'=>'alt تصویر','value'=>old('alt_pic'),'class'=>'w-50'])@endcomponent
                                     @component($prefix_component."input",['name'=>'link','title'=>'لینک','value'=>old('link'),'class'=>'w-50'])@endcomponent
                                     @component($prefix_component."button",['title'=>'ارسال'])@endcomponent
-
                                 @endslot
                             @endcomponent
                         </div>

@@ -186,7 +186,7 @@ return [
     |
     */
 
-    
+
     'attributes' => [
         "name" => "نام",
         "username" => "نام کاربری",
@@ -303,7 +303,10 @@ return [
         'reagent_relativity'=>'نسبت یا نوع آشنایی',
         'reagent_year'=>'مدت آشنایی (سال)',
         'reagent_tell'=>'شماره تماس',
-        'g-recaptcha-response'=>'کد امنیتی'
+        'g-recaptcha-response'=>'کد امنیتی',
+        'answer_title'=>'عنوان ایمیل',
+        'answer_note'=>'پاسخ ایمیل',
+        'position'=>'سمت'
 
         ]
 ];

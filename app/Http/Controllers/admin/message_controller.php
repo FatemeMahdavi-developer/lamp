@@ -2,10 +2,12 @@
 namespace App\Http\Controllers\admin;
 use App\base\class\admin_controller;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\message_request;
+use App\Mail\message_mail;
 use App\Models\message;
 use App\Models\message_cat;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class message_controller extends Controller
@@ -53,21 +55,20 @@ class message_controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(message_request $request, message $message)
-    // {
-    //     $validity_date = Carbon::now()->format("Y/m/d");
-    //     if (!empty($request->validity_date[0])) {
-    //         $validity_date = $this->convert_date_to_timestamp($request->validity_date);
-    //     }
-    //     $message->update([
-    //         'catid' => $request->catid,
-    //         'note' => $request->note,
-    //         'note_more' => $request->note_more,
-    //     ]);
-    //     return back()->with('success', __('common.messages.success_edit', [
-    //         'module' => $this->module_title
-    //     ]));
-    // }
+    public function update(message_request $request, message $message)
+    {
+        $message->update([
+            'admin_id' => auth()->user()->id,
+            'answer_title' => $request->answer_title,
+            'answer_note' => $request->answer_note,
+        ]);
+
+        Mail::to($message->email)->send(new message_mail($request->answer_title,$request->answer_note));
+
+        return back()->with('success', __('common.messages.success_edit', [
+            'module' => $this->module_title
+        ]));
+    }
 
     /**
      * Remove the specified resource from storage.

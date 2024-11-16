@@ -37,7 +37,7 @@ class pagesController extends Controller
      */
     public function index(Request $request)
     {
-        $pages = page::filter($request->all())->paginate(4)->withQueryString();
+        $pages = page::filter($request->all())->orderby('id','desc')->paginate(4)->withQueryString();
         return view($this->view . "list", [
             'pages' => $pages,
             'module_title' => $this->module_title

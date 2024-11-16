@@ -26,6 +26,7 @@
                                             @component($prefix_component."select",['name'=>'kind','title'=>'نوع','class'=>'w-50','items'=>trans("common.kind"),'value_old'=>$page["kind"]])@endcomponent
                                             @component($prefix_component."upload_file",['name'=>'pic','title'=>'تصویر','value'=>$page["pic"],'class'=>'w-50'])@endcomponent
                                             @component($prefix_component."input",['name'=>'alt_pic','title'=>'alt تصویر','value'=>$page["alt_pic"],'class'=>'w-50'])@endcomponent
+                                            @component($prefix_component."textarea_variable",['name'=>'short_note','value'=>$page["short_note"],'title'=>'متن کوتاه'])@endcomponent
                                             @component($prefix_component."advance_note",['name'=>'note','class'=>'my-2 ','title'=>'توضیحات بلند','value'=>$page['note']])@endcomponent
 
                                         @endslot

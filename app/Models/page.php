@@ -29,6 +29,7 @@ class page extends Model
         'alt_pic',
         'state',
         'note',
+        'short_note'
     ];
     public function scopeFilter(Builder $builder , $params){
         if(!empty($params['kind'])){

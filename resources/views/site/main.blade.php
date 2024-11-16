@@ -13,15 +13,25 @@
             <div class="background-color" style="--background-color: #481FA0; opacity: .9;"></div>
         </div>
         <div class="container">
+            @if(isset($pages_main_title))
             <div class="row gy-70">
-                <div class="col-lg-6 offset-lg-1 order-lg-2"><img class="w-100 rounded-4 shadow mb-lg-n210 rellax no-transform-lg" loading="lazy" src="{{asset('site/assets/img/home-1-900x900.jpg ')}}" alt=""></div>
-                <div class="col-lg-5">
-                    <h1 class="text-white mb-45">خدمات <span class="highlight">مالی و مشاوره</span> با کیفیت بالا</h1>
-                    <p class="mb-45 fw-medium text-white ps-lg-30">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p><!-- Button--><a class="btn btn-accent-1" href="contact-01.html" target="_self">تماس با ما <svg class="me-15 align-self-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
+                <div class="col-lg-6 offset-lg-1 order-lg-2">
+                    @if(isset($pages_main_pic) && !empty($pages_main_pic))
+                    <img class="w-100 rounded-4 shadow mb-lg-n210 rellax no-transform-lg" loading="lazy" src="{{asset('upload/'.$pages_main_pic)}}" alt="">
+                    @else
+                    <img class="w-100 rounded-4 shadow mb-lg-n210 rellax no-transform-lg" loading="lazy" src="{{asset('site/assets/img/home-1-900x900.jpg ')}}" alt="">
+                    @endif
+                </div>
+                <div class="col-lg-5 wrapperMain">
+                    <h1 class="text-white mb-45">{{$pages_main_title}}</h1>
+                    {!!$pages_main_note!!}<a class="btn btn-accent-1" href="{{route('contact')}}" target="_self">تماس با ما <svg class="me-15 align-self-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
                             <path fill="currentColor" d="M15 11.23v2.259a1.501 1.501 0 0 1-1.026 1.432c-.199.067-.41.092-.619.073a14.944 14.944 0 0 1-6.508-2.31A14.692 14.692 0 0 1 2.32 8.166 14.877 14.877 0 0 1 .006 1.641 1.503 1.503 0 0 1 .9.13 1.51 1.51 0 0 1 1.507 0H3.77a1.51 1.51 0 0 1 1.508 1.295c.095.722.273 1.432.528 2.115a1.503 1.503 0 0 1-.34 1.588l-.957.956a12.055 12.055 0 0 0 4.525 4.516l.958-.956a1.51 1.51 0 0 1 1.591-.338 9.7 9.7 0 0 0 2.12.527 1.509 1.509 0 0 1 1.296 1.527Z" />
                         </svg></a>
                 </div>
             </div>
+            @else
+            <div class="alert alert-danger">لطفا صفحه ای بانام main بسازید</div>
+            @endif
         </div>
     </div>
     <div class="pt-120 pt-lg-210 pb-130">
@@ -33,63 +43,89 @@
             </div>
             <div class="row gy-30">
                 <div class="col-12 col-md-6 col-lg-3" data-show="startbox">
+                    @if(isset($pages_customize_title))
                     <!-- Service box-->
                     <div class="service-box lift position-relative rounded-4 bg-gray-light text-center">
                         <!-- Circle icon-->
                         <div class="circle-icon text-white bg-accent-2 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="31" fill="none">
                                 <path fill="currentColor" d="M15.556 0 0 18.6h14L12.444 31 28 12.4H14L15.556 0Z" />
                             </svg></div>
-                        <h5 class="service-box-title mb-15 ff-custom fw-normal">شخصی سازی</h5>
-                        <p class="service-box-text font-size-15 mb-30">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p><a class="service-box-arrow stretched-link mt-30" href="service-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
+                        <h5 class="service-box-title mb-15 ff-custom fw-normal">{{$pages_customize_title}}</h5>
+                        <p class="service-box-text font-size-15 mb-30">{{$pages_customize_short_note}}</p>
+                        <a class="service-box-arrow stretched-link mt-30" href="/pages/customize">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
                                 <path stroke="currentColor" stroke-width="1.7" d="M0 7h18m0 0-6.75-6M18 7l-6.75 6"></path>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
+                    @else
+                    <div class="alert alert-danger">لطفا صفحه ای با نام customize بسازید</div>
+                    @endif
                 </div>
                 <div class="col-12 col-md-6 col-lg-3" data-show="startbox" data-show-delay="100">
+                    @if(isset($pages_freeConsultation_title))
                     <!-- Service box-->
                     <div class="service-box lift position-relative rounded-4 bg-gray-light text-center">
                         <!-- Circle icon-->
                         <div class="circle-icon text-white bg-accent-2 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="29" fill="none">
                                 <path fill="currentColor" d="M13.002 0C8.852 0 5.46 3.387 5.46 7.53c0 4.142 3.392 7.529 7.542 7.529s7.542-3.387 7.542-7.53C20.544 3.387 17.15 0 13.002 0ZM25.944 21.076a7.017 7.017 0 0 0-.757-1.381c-1.515-2.236-3.853-3.715-6.488-4.077-.329-.033-.691.033-.955.23a7.942 7.942 0 0 1-4.742 1.545 7.942 7.942 0 0 1-4.742-1.545 1.237 1.237 0 0 0-.955-.23 9.308 9.308 0 0 0-6.488 4.077c-.296.427-.56.92-.757 1.381-.1.197-.066.427.033.625.263.46.592.92.889 1.315.46.625.955 1.184 1.515 1.71.46.46.988.887 1.515 1.315A14.936 14.936 0 0 0 12.969 29c3.228 0 6.356-1.02 8.958-2.96a14.47 14.47 0 0 0 1.515-1.314c.526-.526 1.053-1.085 1.515-1.71.329-.427.625-.855.889-1.315.164-.198.197-.428.098-.625Z" />
                             </svg></div>
-                        <h5 class="service-box-title mb-15 ff-custom fw-normal">مشاوره رایگان</h5>
-                        <p class="service-box-text font-size-15 mb-30">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p><a class="service-box-arrow stretched-link mt-30" href="service-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
+                        <h5 class="service-box-title mb-15 ff-custom fw-normal">{{$pages_freeConsultation_title}}</h5>
+                        <p class="service-box-text font-size-15 mb-30">{{$pages_freeConsultation_short_note}}</p>
+                        <a class="service-box-arrow stretched-link mt-30" href="/pages/freeConsultation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
                                 <path stroke="currentColor" stroke-width="1.7" d="M0 7h18m0 0-6.75-6M18 7l-6.75 6"></path>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
+                    @else
+                    <div class="alert alert-danger">لطفا صفحه ای با نام freeConsultation بسازید</div>
+                    @endif
                 </div>
                 <div class="col-12 col-md-6 col-lg-3" data-show="startbox" data-show-delay="200">
+                    @if(isset($pages_dataSecurity_title))
                     <!-- Service box-->
                     <div class="service-box lift position-relative rounded-4 bg-gray-light text-center">
                         <!-- Circle icon-->
                         <div class="circle-icon text-white bg-accent-2 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="29" fill="none">
                                 <path fill="currentColor" fill-rule="evenodd" d="M7.988 4.955a5.25 5.25 0 0 1 8.962 3.712v5.2H6.45v-5.2a5.25 5.25 0 0 1 1.538-3.712ZM3.95 13.867v-5.2a7.75 7.75 0 1 1 15.5 0v5.2h1.35a2.6 2.6 0 0 1 2.6 2.6v9.1a2.6 2.6 0 0 1-2.6 2.6H2.6a2.6 2.6 0 0 1-2.6-2.6v-9.1a2.6 2.6 0 0 1 2.6-2.6h1.35Z" clip-rule="evenodd" />
                             </svg></div>
-                        <h5 class="service-box-title mb-15 ff-custom fw-normal">امنیت داده</h5>
-                        <p class="service-box-text font-size-15 mb-30">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p><a class="service-box-arrow stretched-link mt-30" href="service-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
+                        <h5 class="service-box-title mb-15 ff-custom fw-normal">{{$pages_dataSecurity_title}}</h5>
+                        <p class="service-box-text font-size-15 mb-30">{{$pages_dataSecurity_short_note}}</p>
+                        <a class="service-box-arrow stretched-link mt-30" href="/pages/dataSecurity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
                                 <path stroke="currentColor" stroke-width="1.7" d="M0 7h18m0 0-6.75-6M18 7l-6.75 6"></path>
                             </svg></a>
                     </div>
+                    @else
+                    <div class="alert alert-danger">لطفا صفحه ای با نام dataSecurity بسازید</div>
+                    @endif
                 </div>
                 <div class="col-12 col-md-6 col-lg-3" data-show="startbox" data-show-delay="300">
+                    @if(isset($pages_returnPay_title))
                     <!-- Service box-->
                     <div class="service-box lift position-relative rounded-4 bg-gray-light text-center">
                         <!-- Circle icon-->
                         <div class="circle-icon text-white bg-accent-2 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" fill="none">
                                 <path fill="currentColor" d="m14.5 0 4.48 8.886L29 10.32l-7.25 6.913L23.461 27 14.5 22.386 5.539 27l1.711-9.767L0 10.32l10.02-1.434L14.5 0Z" />
                             </svg></div>
-                        <h5 class="service-box-title mb-15 ff-custom fw-normal">بازگشت وجه</h5>
-                        <p class="service-box-text font-size-15 mb-30">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p><a class="service-box-arrow stretched-link mt-30" href="service-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
+                        <h5 class="service-box-title mb-15 ff-custom fw-normal">{{$pages_returnPay_title}}</h5>
+                        <p class="service-box-text font-size-15 mb-30">{{$pages_returnPay_short_note}}</p>
+                        <a class="service-box-arrow stretched-link mt-30" href="/pages/returnPay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" fill="none">
                                 <path stroke="currentColor" stroke-width="1.7" d="M0 7h18m0 0-6.75-6M18 7l-6.75 6"></path>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
+                    @else
+                    <div class="alert alert-danger">لطفا صفحه ای با نام returnPay بسازید</div>
+                    @endif
                 </div>
             </div>
             <div class="text-center mt-80">
                 <div data-show="startbox">
-                    <!-- Button--><a class="btn btn-accent-1" href="services-01.html" target="_self">اطلاعات بیشتر</a>
+                    <!-- Button--><a class="btn btn-accent-1" href="{{route('contact')}}?" target="_self">اطلاعات بیشتر</a>
                 </div>
-                <p class="fw-medium font-size-15 mt-25 mb-0" data-show="startbox" data-show-delay="100">آیا می خواهید یک مشاوره رایگان دریافت کنید؟ <a href="contact-01.html">تماس با ما</a></p>
+                <p class="fw-medium font-size-15 mt-25 mb-0" data-show="startbox" data-show-delay="100">آیا می خواهید یک مشاوره رایگان دریافت کنید؟ <a href="{{route('contact')}}">تماس با ما</a></p>
             </div>
         </div>
     </div>
@@ -121,24 +157,24 @@
             <hr class="mt-100 mb-60">
             <div class="row gy-40">
                 <div class="col-12 col-sm-6 col-lg-3" data-show="startbox">
-                    <div class="h1 m-0 text-accent-2">328</div>
-                    <div class="h6 mb-15 ff-custom fw-normal">پروژه موفق</div>
-                    <p class="font-size-15 m-0 ps-20">سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    <div class="h1 m-0 text-accent-2">{{app('setting')['project_success_count']}}</div>
+                    <div class="h6 mb-15 ff-custom fw-normal">{{app('setting')['project_success_title']}}</div>
+                    <p class="font-size-15 m-0 ps-20">{{app('setting')['project_success_note']}}</p>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3" data-show="startbox" data-show-delay="100">
-                    <div class="h1 m-0 text-accent-2">10+</div>
-                    <div class="h6 mb-15 ff-custom fw-normal">سال تجربه کاری</div>
-                    <p class="font-size-15 m-0 ps-20">سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    <div class="h1 m-0 text-accent-2">{{app('setting')['project_year_count']}}</div>
+                    <div class="h6 mb-15 ff-custom fw-normal">{{app('setting')['project_year_title']}}</div>
+                    <p class="font-size-15 m-0 ps-20">{{app('setting')['project_year_note']}}</p>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3" data-show="startbox" data-show-delay="200">
-                    <div class="h1 m-0 text-accent-2">68%</div>
-                    <div class="h6 mb-15 ff-custom fw-normal">تضمین بازگشت وجه</div>
-                    <p class="font-size-15 m-0 ps-20">سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    <div class="h1 m-0 text-accent-2">{{app('setting')['project_refund_count']}}</div>
+                    <div class="h6 mb-15 ff-custom fw-normal">{{app('setting')['project_refund_title']}}</div>
+                    <p class="font-size-15 m-0 ps-20">{{app('setting')['project_refund_note']}}</p>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3" data-show="startbox" data-show-delay="300">
-                    <div class="h1 m-0 text-accent-2">1k</div>
-                    <div class="h6 mb-15 ff-custom fw-normal">پشتیبانی فنی</div>
-                    <p class="font-size-15 m-0 ps-20">سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    <div class="h1 m-0 text-accent-2">{{app('setting')['project_support_count']}}</div>
+                    <div class="h6 mb-15 ff-custom fw-normal">{{app('setting')['project_support_title']}}</div>
+                    <p class="font-size-15 m-0 ps-20">{{app('setting')['project_support_note']}}</p>
                 </div>
             </div>
         </div>
