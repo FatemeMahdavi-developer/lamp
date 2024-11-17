@@ -29,6 +29,7 @@ return [
         'project' => 'پروژه',
         'project_cat' => 'دسته بندی پروژه',
         'team' => 'اعضای تیم',
+        'viewpoint' => 'دیدگاه مشتریان',
     ],
     'module_name_site' => [
         'news' => 'اخبار',
@@ -36,6 +37,7 @@ return [
         'about' => 'درباره ما',
         'project' => 'پروژه ها',
         'team' => 'اعضای تیم',
+        'viewpoint' => 'دیدگاه مشتریان',
         // 'product' => 'محصولات',
         // 'multimedia' => 'چندرسانه ای',
         // 'photo' => 'گالری',

@@ -345,6 +345,13 @@ function resize_image()
                 ]
             ]
         ],
+        'viewpoint' => [
+            'pic' => [
+                [
+                    '200' => '200',
+                ],
+            ]
+        ],
 
     ];
 

@@ -301,137 +301,54 @@
             </div>
         </div>
     </div>
-    <div class="py-100 position-relative">
-        <div class="background">
-            <div class="background-image jarallax" data-jarallax data-speed="0.8"><img class="jarallax-img" loading="lazy" src="{{asset('site/assets/img/root/process-1920x500.jpg ')}}" alt=""></div>
-            <div class="background-color" style="--background-color: #F01F4B; opacity: .88;"></div>
-        </div>
-        <div class="container overflow-hidden">
-            <div class="row gy-50 gx-50">
-                <div class="col-12 col-md-6 col-lg-4" data-show="startbox">
-                    <!-- Process step-->
-                    <div class="process-step ">
-                        <div class="process-number h1 large-heading m-0 text-white">01</div>
-                        <div class="process-body pt-10 me-30"><a class="process-title h4 text-white" href="#">برگزاری جلسه<svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="42" height="11" fill="none">
-                                    <path stroke="currentColor" stroke-width="2" d="M0 5.5h40m0 0L34.6 1M40 5.5 34.6 10" />
-                                </svg></a>
-                            <p class="process-text text-white">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4" data-show="startbox" data-show-delay="100">
-                    <!-- Process step-->
-                    <div class="process-step ">
-                        <div class="process-number h1 large-heading m-0 text-white">02</div>
-                        <div class="process-body pt-10 me-30"><a class="process-title h4 text-white" href="#">تحلیل پروژه<svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="42" height="11" fill="none">
-                                    <path stroke="currentColor" stroke-width="2" d="M0 5.5h40m0 0L34.6 1M40 5.5 34.6 10" />
-                                </svg></a>
-                            <p class="process-text text-white">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4" data-show="startbox" data-show-delay="200">
-                    <!-- Process step-->
-                    <div class="process-step ">
-                        <div class="process-number h1 large-heading m-0 text-white">03</div>
-                        <div class="process-body pt-10 me-30"><a class="process-title h4 text-white" href="#">شروع قرارداد<svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="42" height="11" fill="none">
-                                    <path stroke="currentColor" stroke-width="2" d="M0 5.5h40m0 0L34.6 1M40 5.5 34.6 10" />
-                                </svg></a>
-                            <p class="process-text text-white">از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    @if(isset($view_points[0]))
     <div class="bg-linear-gradient pt-120 pb-130">
         <div class="container">
             <div class="justify-content-center d-flex align-items-center" data-show="startbox">
                 <h3 class="m-0">دیدگاه مشتریان</h3>
-                <div class="d-inline-flex flex-column me-20"><svg class="d-block" xmlns="http://www.w3.org/2000/svg" width="84" height="15" fill="none">
-                        <path fill="#FFBB38" d="m8.022 0 2.48 4.937 5.543.796-4.011 3.841L12.98 15l-4.958-2.563L3.065 15l.946-5.426L0 5.734l5.544-.797L8.022 0ZM25.01 0l2.48 4.937 5.543.796-4.011 3.841.947 5.426-4.958-2.563L20.053 15 21 9.574l-4.012-3.84 5.544-.797L25.01 0ZM42 0l2.479 4.937 5.544.796-4.012 3.841.947 5.426L42 12.437 37.042 15l.947-5.426-4.011-3.84 5.543-.797L42 0ZM58.988 0l2.48 4.937 5.543.796L63 9.574 63.945 15l-4.958-2.563L54.03 15l.947-5.426-4.011-3.84 5.543-.797L58.99 0ZM75.978 0l2.479 4.937L84 5.733l-4.011 3.841.946 5.426-4.957-2.563L71.02 15l.946-5.426-4.01-3.84 5.543-.797L75.978 0Z" />
-                    </svg><span class="fw-medium font-size-13">امتیازات امروز</span></div>
-            </div><!-- Slider-->
+            </div>
             <div class="swiper mt-90" data-swiper-slides="1" data-swiper-breakpoints="828:2, 1024:3" data-swiper-gap="30" data-swiper-grabcursor="true" data-show="startbox" data-show-delay="200">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide h-auto">
-                            <!-- Feedback-->
-                            <div class="feedback bg-white rounded-4 h-100 shadow">
-                                <div class="feedback-stars lh-1 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" fill="none">
-                                        <path fill="#FFBB38" d="m8.595 0 2.656 5.266 5.94.85-4.298 4.096L13.907 16l-5.312-2.734L3.283 16l1.015-5.788L0 6.116l5.94-.85L8.594 0ZM26.798 0l2.656 5.266 5.94.85-4.299 4.096L32.11 16l-5.312-2.734L21.486 16l1.014-5.788-4.298-4.096 5.94-.85L26.798 0ZM45 0l2.656 5.266 5.94.85-4.298 4.096L50.312 16 45 13.266 39.688 16l1.014-5.788-4.298-4.096 5.94-.85L45 0ZM63.202 0l2.656 5.266 5.94.85-4.298 4.096L68.514 16l-5.312-2.734L57.89 16l1.014-5.788-4.298-4.096 5.94-.85L63.202 0ZM81.404 0l2.656 5.266 5.94.85-4.298 4.096L86.716 16l-5.312-2.734L76.092 16l1.014-5.788-4.297-4.096 5.94-.85L81.403 0Z" />
-                                    </svg></div>
-                                <div class="feedback-header d-flex align-items-center mb-35">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" loading="lazy" src="{{asset('site/assets/img/root/avatar-1-200x200.jpg ')}}" alt="" height="64" width="64"></div>
-                                    <div class="flex-grow-1 me-20">
-                                        <h6 class="feedback-author mb-5">علی حسینی</h6>
-                                        <p class="feedback-position text-gray-dark font-size-14 m-0">کارشناس بازاریابی</p>
+                        @foreach($view_points as $view_point)
+                            <div class="swiper-slide h-auto">
+                                <div class="feedback bg-white rounded-4 h-100 shadow">
+                                    <div class="feedback-header d-flex align-items-center mb-35">
+                                        <div class="flex-shrink-0">
+                                            @if($view_point->pic)
+                                                <img class="rounded-circle" loading="lazy" src="{{asset('upload/thumb1/'.$view_point->pic)}}" alt="" height="64" width="64">
+                                            @else
+                                                <img class="rounded-circle" loading="lazy" src="{{asset("site/img/no_image/no_image(200x200).jpg")}}" alt="" height="64" width="64">
+                                            @endif
+                                        </div>
+                                        <div class="flex-grow-1 me-20">
+                                            <h6 class="feedback-author mb-5">{{$view_point->title}}</h6>
+                                            <p class="feedback-position text-gray-dark font-size-14 m-0">{{$view_point->position}}</p>
+                                        </div>
                                     </div>
+                                    <p class="feedback-text fw-medium text-dark m-0">{{$view_point->note}}</p>
                                 </div>
-                                <p class="feedback-text fw-medium text-dark m-0">“ زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. ”</p>
                             </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <!-- Feedback-->
-                            <div class="feedback bg-white rounded-4 h-100 shadow">
-                                <div class="feedback-stars lh-1 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" fill="none">
-                                        <path fill="#FFBB38" d="m8.595 0 2.656 5.266 5.94.85-4.298 4.096L13.907 16l-5.312-2.734L3.283 16l1.015-5.788L0 6.116l5.94-.85L8.594 0ZM26.798 0l2.656 5.266 5.94.85-4.299 4.096L32.11 16l-5.312-2.734L21.486 16l1.014-5.788-4.298-4.096 5.94-.85L26.798 0ZM45 0l2.656 5.266 5.94.85-4.298 4.096L50.312 16 45 13.266 39.688 16l1.014-5.788-4.298-4.096 5.94-.85L45 0ZM63.202 0l2.656 5.266 5.94.85-4.298 4.096L68.514 16l-5.312-2.734L57.89 16l1.014-5.788-4.298-4.096 5.94-.85L63.202 0ZM81.404 0l2.656 5.266 5.94.85-4.298 4.096L86.716 16l-5.312-2.734L76.092 16l1.014-5.788-4.297-4.096 5.94-.85L81.403 0Z" />
-                                    </svg></div>
-                                <div class="feedback-header d-flex align-items-center mb-35">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" loading="lazy" src="{{asset('site/assets/img/root/avatar-2-200x200.jpg ')}}" alt="" height="64" width="64"></div>
-                                    <div class="flex-grow-1 me-20">
-                                        <h6 class="feedback-author mb-5">نیلوفر علیزاده</h6>
-                                        <p class="feedback-position text-gray-dark font-size-14 m-0">مدیر عامل</p>
-                                    </div>
-                                </div>
-                                <p class="feedback-text fw-medium text-dark m-0">“ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است 🔥 ”</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <!-- Feedback-->
-                            <div class="feedback bg-white rounded-4 h-100 shadow">
-                                <div class="feedback-stars lh-1 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" fill="none">
-                                        <path fill="#FFBB38" d="m8.595 0 2.656 5.266 5.94.85-4.298 4.096L13.907 16l-5.312-2.734L3.283 16l1.015-5.788L0 6.116l5.94-.85L8.594 0ZM26.798 0l2.656 5.266 5.94.85-4.299 4.096L32.11 16l-5.312-2.734L21.486 16l1.014-5.788-4.298-4.096 5.94-.85L26.798 0ZM45 0l2.656 5.266 5.94.85-4.298 4.096L50.312 16 45 13.266 39.688 16l1.014-5.788-4.298-4.096 5.94-.85L45 0ZM63.202 0l2.656 5.266 5.94.85-4.298 4.096L68.514 16l-5.312-2.734L57.89 16l1.014-5.788-4.298-4.096 5.94-.85L63.202 0ZM81.404 0l2.656 5.266 5.94.85-4.298 4.096L86.716 16l-5.312-2.734L76.092 16l1.014-5.788-4.297-4.096 5.94-.85L81.403 0Z" />
-                                    </svg></div>
-                                <div class="feedback-header d-flex align-items-center mb-35">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" loading="lazy" src="{{asset('site/assets/img/root/avatar-3-200x200.jpg ')}}" alt="" height="64" width="64"></div>
-                                    <div class="flex-grow-1 me-20">
-                                        <h6 class="feedback-author mb-5">مهرداد افخمی</h6>
-                                        <p class="feedback-position text-gray-dark font-size-14 m-0">برنامه نویس</p>
-                                    </div>
-                                </div>
-                                <p class="feedback-text fw-medium text-dark m-0">“ طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.”</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide h-auto">
-                            <!-- Feedback-->
-                            <div class="feedback bg-white rounded-4 h-100 shadow">
-                                <div class="feedback-stars lh-1 mb-30"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" fill="none">
-                                        <path fill="#FFBB38" d="m8.595 0 2.656 5.266 5.94.85-4.298 4.096L13.907 16l-5.312-2.734L3.283 16l1.015-5.788L0 6.116l5.94-.85L8.594 0ZM26.798 0l2.656 5.266 5.94.85-4.299 4.096L32.11 16l-5.312-2.734L21.486 16l1.014-5.788-4.298-4.096 5.94-.85L26.798 0ZM45 0l2.656 5.266 5.94.85-4.298 4.096L50.312 16 45 13.266 39.688 16l1.014-5.788-4.298-4.096 5.94-.85L45 0ZM63.202 0l2.656 5.266 5.94.85-4.298 4.096L68.514 16l-5.312-2.734L57.89 16l1.014-5.788-4.298-4.096 5.94-.85L63.202 0ZM81.404 0l2.656 5.266 5.94.85-4.298 4.096L86.716 16l-5.312-2.734L76.092 16l1.014-5.788-4.297-4.096 5.94-.85L81.403 0Z" />
-                                    </svg></div>
-                                <div class="feedback-header d-flex align-items-center mb-35">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" loading="lazy" src="{{asset('site/assets/img/root/avatar-1-200x200.jpg ')}}" alt="" height="64" width="64"></div>
-                                    <div class="flex-grow-1 me-20">
-                                        <h6 class="feedback-author mb-5">علی حسینی</h6>
-                                        <p class="feedback-position text-gray-dark font-size-14 m-0">کارشناس ارشد بازاریابی</p>
-                                    </div>
-                                </div>
-                                <p class="feedback-text fw-medium text-dark m-0">“ زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.  ”</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="d-flex mt-70 justify-content-center">
-                    <div class="swiper-button-prev swiper-button-position-2 swiper-button-white shadow"><svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="20" height="14" fill="none">
+                    <div class="swiper-button-prev swiper-button-position-2 swiper-button-white shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="20" height="14" fill="none">
                             <path fill="currentColor" fill-rule="evenodd" d="m3.96 6.15 5.08-4.515L7.91.365.445 7l7.465 6.635 1.13-1.27L3.96 7.85h15.765v-1.7H3.96Z" clip-rule="evenodd" />
-                        </svg></div>
-                    <div class="swiper-button-next swiper-button-position-2 swiper-button-white shadow"><svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="20" height="14" fill="none">
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next swiper-button-position-2 swiper-button-white shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="img-svg" width="20" height="14" fill="none">
                             <path fill="currentColor" fill-rule="evenodd" d="m16.21 6.15-5.08-4.515 1.13-1.27L19.725 7l-7.465 6.635-1.13-1.27 5.08-4.515H.445v-1.7H16.21Z" clip-rule="evenodd" />
-                        </svg></div>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    @endif
     <div class="pt-120 pb-130 overflow-hidden footerPrev">
         <div class="container">
             <div class="row align-items-center gy-90">

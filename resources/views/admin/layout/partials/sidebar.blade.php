@@ -324,6 +324,19 @@
                 </ul>
             </li>
             @endcanany
+            @canany(permission_access("viewpoint"))
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-comment-dots"></i><span>دیدگاه مشریان</span></a>
+                <ul class="dropdown-menu @if(str_contains(request()->route()->getName(),'viewpoint')) d-block @endif">
+                    @can("create_viewpoint")
+                    <li><a class="nav-link" href="{{route("admin.viewpoint.create")}}">دیدگاه جدید</a></li>
+                    @endcan
+                    @can("read_viewpoint")
+                    <li><a class="nav-link" href="{{route("admin.viewpoint.index")}}">لیست دیدگاه مشتریان</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcanany
         </ul>
     </aside>
 </div>
