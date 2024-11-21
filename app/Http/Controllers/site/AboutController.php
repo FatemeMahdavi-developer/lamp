@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\page;
 use App\Models\team;
 use App\Trait\seo_site;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -20,8 +19,8 @@ class AboutController extends Controller
     public function about()
     {
         $seo=$this->seo_site($this->module);
-        $sliders=page::where('seo_url','about2')->first()->content_site()->where('kind',3)->all();
-        $contents_about=page::where('seo_url','about')->first()->content_site()->where('kind',1)->all();
+        $sliders=page::where('seo_url','about2')->first()?->content_site()->where('kind',3)->all();
+        $contents_about=page::where('seo_url','about')->first()?->content_site()->where('kind',1)->all();
 
         $teams=team::where('state','1')->get();
 
