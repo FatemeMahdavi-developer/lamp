@@ -14,12 +14,13 @@
             <ul class="nav navbar-nav order-2 me-auto nav-no-opacity">
                 @if(isset($header_menu) && !empty($header_menu))
                 @foreach($header_menu as $item)
-                    <li class="nav-item navbar-dropdown"><a class="nav-link" @if(empty($item['pages']))@if($item['url'] != "#")href="{{$item['url']}}"@else href="javascript:void(0)" @endif @if($item['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$item['pages']}}" @endif><span>{{$item['title']}}</span></a>
+                    <li class="nav-item navbar-dropdown">
+                        <a class="nav-link" @if(empty($item['pages']))@if($item['url'] != "#")href="/{{$item['url']}}"@else href="javascript:void(0)" @endif @if($item['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$item['pages']}}" @endif><span>{{$item['title']}}</span></a>
                         @if(!empty($item->sub_menus_site[0]))
                         <div class="dropdown-menu rounded-2 shadow">
                             <ul class="nav navbar-nav">
                                 @foreach($item->sub_menus_site as $menu)
-                                <li class="nav-item"><a class="nav-link" @if(empty($menu['pages']))@if($menu['url'] != "#")href="{{$menu['url']}}"@else href="javascript:void(0)" @endif @if($menu['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$menu['pages']}}" @endif @if($menu['open_type'] == '2') target="_blank" @endif><span>{{$menu['title']}}</span></a></li>
+                                <li class="nav-item"><a class="nav-link" @if(empty($menu['pages']))@if($menu['url'] != "#")href="/{{$menu['url']}}"@else href="javascript:void(0)" @endif @if($menu['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$menu['pages']}}" @endif @if($menu['open_type'] == '2') target="_blank" @endif><span>{{$menu['title']}}</span></a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -47,12 +48,13 @@
                 <ul class="nav navbar-nav navbar-nav-collapse">
                     @if(isset($header_menu[0]))
                         @foreach($header_menu as $item)
-                         <li class="nav-item navbar-collapse"><a class="nav-link" @if(!isset($item->sub_menus_site[0]))@if(empty($item['pages']))@if($item['url'] != "#")href="{{$item['url']}}"@else href="javascript:void(0)" @endif @else href="/pages/{{$item["pages"]}}" @endif @else href="#submenu{{$item["id"]}}"  data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbarCollapsePages" @endif ><span>{{$item["title"]}}</span></a>
+                         <li class="nav-item navbar-collapse">
+                            <a class="nav-link" @if(!isset($item->sub_menus_site[0]))@if(empty($item['pages']))@if($item['url'] != "#")href="/{{$item['url']}}"@else href="javascript:void(0)" @endif @else href="/pages/{{$item["pages"]}}" @endif @else href="#submenu{{$item["id"]}}"  data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbarCollapsePages" @endif ><span>{{$item["title"]}}</span></a>
                             @if(isset($item->sub_menus_site[0]))
                                 <div class="navbar-collapse-menu collapse" id="submenu{{$item["id"]}}">
                                     <ul class="nav navbar-nav">
                                         @foreach($item->sub_menus_site as $item)
-                                            <li class="nav-item"><a class="nav-link" @if(empty($item['pages']))@if($item['url'] != "#")href="{{$item['url']}}"@else href="javascript:void(0)" @endif @if($item['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$item['pages']}}" @endif @if($item['open_type'] == '2') target="_blank" @endif><span>{{$item['title']}}</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" @if(empty($item['pages']))@if($item['url'] != "#")href="/{{$item['url']}}"@else href="javascript:void(0)" @endif @if($item['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$item['pages']}}" @endif @if($item['open_type'] == '2') target="_blank" @endif><span>{{$item['title']}}</span></a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -100,18 +102,6 @@
     </div><!-- Topbar-->
     <div class="navbar navbar-topbar navbar-expand-xl navbar-dark navbar-absolute top-0 d-none d-xl-flex">
         <div class="container">
-            <!-- Language switcher-->
-{{--            <ul class="nav navbar-nav ms-100 nav-no-opacity">--}}
-{{--                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">فارسی<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" fill="none">--}}
-{{--                            <path fill="currentColor" d="m5 5-.495.495L5 5.99l.495-.495L5 5ZM.505 1.495l4 4 .99-.99-4-4-.99.99Zm4.99 4 4-4-.99-.99-4 4 .99.99Z" />--}}
-{{--                        </svg></a>--}}
-{{--                    <ul class="dropdown-menu rounded-2 shadow">--}}
-{{--                        <li><a class="dropdown-item active" href="#">انگلیسی</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">عربی</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">آلمانی</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--            </ul><!-- Contacts-->--}}
             <ul class="nav navbar-nav nav-gap-xl nav-contacts nav-no-opacity">
                 @if(isset(app('setting')['tell_header']) && !empty(app('setting')['tell_header']))
                 <li class="nav-item"><a class="nav-link" href="tel:{{app('setting')['tell_header']}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">

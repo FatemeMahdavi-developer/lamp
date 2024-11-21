@@ -43,11 +43,11 @@
             <div class="col-2 d-none d-lg-block"></div>
             <div class="col-12 col-lg-7">
                 <div class="row gy-50">
-                    @if(isset($footer_menu[0]))
+                    @if(isset($footer_menu) && !empty($footer_menu))
                     @foreach ($footer_menu as $menu)
                     <div class="col-6 col-md-4">
                         <h6 class="display-6 text-white mb-20">{{$menu["title"]}}</h6>
-                        @if($menu->sub_menus_site[0])
+                        @if($menu->sub_menus_site)
                         <ul class="nav flex-column text-white nav-opacity nav-gap-sm">
                             @foreach ($menu->sub_menus_site as $item)
                                 <li class="nav-item"><a class="nav-link" @if(empty($item['pages']))@if($item['url'] != "#")href="{{$item['url']}}"@else href="javascript:void(0)" @endif @if($item['open_type'] == '2') target="_blank" @endif @else href="/pages/{{$item['pages']}}" @endif @if($item['open_type'] == '2') target="_blank" @endif>{{$item["title"]}}</a></li>
