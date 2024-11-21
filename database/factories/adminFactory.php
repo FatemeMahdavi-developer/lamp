@@ -18,14 +18,14 @@ class adminFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'fullname'=>'ادمین اصلی',
-            // 'username'=>'admin',
-            // 'password'=>Hash::make('admin'),
-            // 'mobile'=>'09120001122',
-            // 'email'=>'info@gmail.com',
-            // 'city'=>1,
-            // 'province'=>1,
-            // 'is_main'=>1,
+            'fullname'=>'ادمین اصلی',
+            'username'=>'admin',
+            'password'=>Hash::make('admin'),
+            'mobile'=>'09120001122',
+            'email'=>'info@gmail.com',
+            'city'=>1,
+            'province'=>1,
+            'is_main'=>1,
         ];
     }
 }

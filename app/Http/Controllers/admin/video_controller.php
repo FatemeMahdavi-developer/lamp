@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\gallery_request;
 use App\Models\gallery;
@@ -131,6 +131,6 @@ class video_controller extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request,gallery::class);
+        return (new AdminController())->action($request,gallery::class);
     }
 }

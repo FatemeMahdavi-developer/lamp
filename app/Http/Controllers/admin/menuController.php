@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\menu_request;
 use App\Models\menu;
@@ -17,7 +17,7 @@ class menuController extends Controller
     use ResizeImage;
 
     //message:
-    // search tab doesn't work 
+    // search tab doesn't work
     // edit menu show error pic
     public function __construct(private string $view = "", private string $module = '', private string $module_title = '')
     {
@@ -36,7 +36,7 @@ class menuController extends Controller
     public function index(Request $request)
     {
         $menu_kind=trans('common.menu_kind');
-        $open_type = trans('common.open_type'); 
+        $open_type = trans('common.open_type');
         $menus = menu::filter($request->all())->with(['sub_menus'])->orderBy('id','desc')->paginate(5);
         $menu_cats_search = menu::where("catid", "0")->with("sub_menus")->get();
         return view($this->view . "list", [
@@ -58,7 +58,7 @@ class menuController extends Controller
         $menu_kind=trans('common.menu_kind');
         $open_type = trans('common.open_type');
         $pages_url=page::get(["title","seo_url"])->pluck("title","seo_url")->toArray();
-        
+
         return view($this->view.'new',[
             'menu_kind' => $menu_kind,
             'open_type' => $open_type,
@@ -158,6 +158,6 @@ class menuController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, menu::class);
+        return (new AdminController())->action($request, menu::class);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\gallery_cat_request;
 use App\Models\gallery_cat;
@@ -106,6 +106,6 @@ class photo_cat_controller extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request,gallery_cat::class);
+        return (new AdminController())->action($request,gallery_cat::class);
     }
 }

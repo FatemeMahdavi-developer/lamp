@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Exports\EmploymentExport;
 use App\Http\Controllers\Controller;
 use App\Models\employment;
@@ -64,14 +64,14 @@ class employment_controller extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, employment::class);
+        return (new AdminController())->action($request, employment::class);
     }
 
-    public function excel() 
+    public function excel()
     {
         return Excel::download(new EmploymentExport,'employment.xlsx');
     }
-    
+
     public function print(int $id){
         $employment=employment::findOrFail($id);
         return view($this->view.'.print',compact('employment'));

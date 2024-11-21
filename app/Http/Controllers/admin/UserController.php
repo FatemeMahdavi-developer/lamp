@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\UserRequest;
 use App\Models\province;
@@ -94,7 +94,7 @@ class UserController extends Controller
             return true;
         }
         else {
-            return (new admin_controller())->action($request, User::class);
+            return (new AdminController())->action($request, User::class);
 
         }
     }

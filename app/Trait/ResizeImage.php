@@ -18,7 +18,7 @@ trait ResizeImage
             $size_file = $filed->getSize();
             $file_name = time() . $name . "." . $extension;
 
-            $filed->move(public_path("upload/" . $module . "/"), $file_name);
+            $filed->move(public_path(env("APP_PUBLIC_PATH")."upload/" . $module . "/"), $file_name);
             $i = 1;
             $resizes_field_name = $resize_image[$module][$field_name] ?? [];
             if (!empty($resizes_field_name) && in_array($extension, $this->valid_extension)) {

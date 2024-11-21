@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\project_cat_request;
 use App\Models\project_cat;
@@ -141,7 +141,7 @@ class project_cat_controller extends Controller
             return response()->json(['errors' => $validator->errors()]);
         }
 
-        return (new admin_controller())->action($request,project_cat::class);
+        return (new AdminController())->action($request,project_cat::class);
     }
 
 }

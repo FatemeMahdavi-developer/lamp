@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer("province");
             $table->enum("is_main",["0","1"])->default("0");
             $table->string('password');
-            $table->string('pic');
+            $table->string('pic')->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
