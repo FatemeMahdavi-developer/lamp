@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\banner_request;
 use App\Models\banner;
@@ -134,6 +134,6 @@ class bannerController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, banner::class);
+        return (new AdminController())->action($request, banner::class);
     }
 }

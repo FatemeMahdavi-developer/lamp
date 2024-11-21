@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\viewpoint_request;
 use App\Models\Viewpoint;
@@ -119,6 +119,6 @@ class ViewpointController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, Viewpoint::class);
+        return (new AdminController())->action($request, Viewpoint::class);
     }
 }

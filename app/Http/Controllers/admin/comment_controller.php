@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Models\comment;
 use Carbon\Carbon;
@@ -21,7 +21,7 @@ class comment_controller extends Controller
         $this->view = "admin.module.comment.";
         $this->module = "comment";
         $this->module_title = __("modules.module_name." . $this->module);
-        
+
         foreach (trans("modules.crud_authorize") as $key => $value) {
             $authorize_name=sprintf("authorize:%s_%s",$key,$this->module);
             $this->middleware($authorize_name)->only($value);
@@ -88,7 +88,7 @@ class comment_controller extends Controller
             return response()->json(['errors' => $validator->errors()]);
         }
 
-        return (new admin_controller())->action($request, comment::class);
+        return (new AdminController())->action($request, comment::class);
     }
 
 

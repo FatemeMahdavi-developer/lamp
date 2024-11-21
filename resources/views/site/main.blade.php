@@ -356,7 +356,7 @@
         </div>
     </div><!-- Call to action-->
     <div class="position-relative">
-        @if($pages_advicemain_title)
+        @if(@$pages_advicemain_title)
         <div class="half-section-block container position-absolute top-50 start-0 end-0" data-prev-id=".footerPrev" data-next-id=".footerNext">
             <div class="shape-parent">
                 <div class="pt-120 pb-130 px-30 position-relative rounded-4 overflow-hidden z-index-1">

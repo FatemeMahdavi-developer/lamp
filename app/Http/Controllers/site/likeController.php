@@ -21,7 +21,7 @@ class LikeController extends Controller
             if($liketable->like()->where('user_id',auth()->id())->count()){
 
                 return json_encode(['error'=>'نظر شما قبلا ثبت شده است']);
-                
+
             }else{
                 if(request()->has('kind'))
                     $kind=request()->get('kind');

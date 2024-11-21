@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\employment_section_request;
 use App\Models\employment_section;
@@ -55,10 +55,10 @@ class employment_section_controller extends Controller
         $inputs=$request->validated();
         $inputs['admin_id']=auth()->user()->id;
         employment_section::create($inputs);
-        return back()->with('success',__('common.messages.success',[ 
+        return back()->with('success',__('common.messages.success',[
             'module' => $this->module_title
         ]));
-        
+
     }
 
     /**
@@ -102,7 +102,7 @@ class employment_section_controller extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request,employment_section::class);
+        return (new AdminController())->action($request,employment_section::class);
     }
 
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\manager_request;
 use App\Models\admin;

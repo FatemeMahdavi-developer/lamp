@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\content_request;
 use App\Models\content;
@@ -131,7 +131,7 @@ class content_controller extends Controller
             return response()->json(['errors' => $validator->errors()]);
         }
 
-        return (new admin_controller())->action($request, content::class);
+        return (new AdminController())->action($request, content::class);
     }
 
     public function edit($item_id, $module)

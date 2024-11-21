@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers\admin;
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\message_request;
 use App\Mail\message_mail;
@@ -85,6 +85,6 @@ class message_controller extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, message::class);
+        return (new AdminController())->action($request, message::class);
     }
 }

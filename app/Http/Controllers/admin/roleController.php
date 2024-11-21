@@ -9,7 +9,7 @@ use App\Models\role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use App\base\class\admin_controller;
+use App\Base\Class\AdminController;
 use Illuminate\Support\Facades\Gate;
 
 class roleController extends Controller
@@ -133,7 +133,7 @@ class roleController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         }
-        return (new admin_controller())->action($request, role::class);
+        return (new AdminController())->action($request, role::class);
 
     }
 }

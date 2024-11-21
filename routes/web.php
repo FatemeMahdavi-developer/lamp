@@ -13,6 +13,7 @@ use App\Http\Controllers\site\projectController;
 use App\Http\Controllers\site\searchController;
 use App\Http\Controllers\site\VideoController;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -97,5 +98,20 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
     // Route::get('/sitemap.xml');
 
+    Route::prefix('artisan')->group(function(){
 
+        Route::get('/optimize',function(){
+
+            Artisan::call('optimize:clear');
+
+           return 'Done';
+        });
+
+        Route::get('/storage',function(){
+
+            Artisan::call('storage:link');
+
+           return 'Done';
+        });
+    });
 // });

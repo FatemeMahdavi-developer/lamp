@@ -1,9 +1,9 @@
 <?php
 
-namespace App\base\class;
+namespace App\Base\Class;
 
 
-class admin_controller
+class AdminController
 {
 
 
