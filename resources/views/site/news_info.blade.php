@@ -1,12 +1,15 @@
 @extends('site.layout.base')
-@section('head')
-    <link rel="stylesheet" href="{{asset('site/assets/css/pages/page-07-02.css')}}">
-@endsection
 @section('content')
 <div class="content-wrap ">
     <div class="py-240 position-relative">
         <div class="background">
-            <div class="background-image jarallax" data-jarallax data-speed="0.8"><img class="jarallax-img" loading="lazy" src="{{asset('site/assets/img/blog/single-post-hero-1920x1080.jpg')}}" alt=""></div>
+            <div class="background-image jarallax" data-jarallax data-speed="0.8">
+                @if(isset($news['pic_banner']) && !empty($news['pic_banner']))
+                <img class="jarallax-img" loading="lazy" src="{{asset('upload/thumb1/'.$news['pic_banner'])}}" alt="{{$news["title"]}}">
+                @else
+                <img class="jarallax-img" loading="lazy" src="{{asset('site/assets/img/blog/single-post-hero-1920x1080.jpg')}}" alt="{{$news["title"]}}">
+                @endif
+            </div>
         </div>
     </div>
     <div class="container">
